@@ -1,11 +1,26 @@
-﻿namespace YourKitchenApp;
+﻿using YourKitchenApp.Views;
+
+
+namespace YourKitchenApp;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public App()
+    {
+        InitializeComponent();
+        Routing.RegisterRoute("MainPage", typeof(MainPage));
+        Routing.RegisterRoute("LoginPage", typeof(LoginPage));
+        Routing.RegisterRoute("RegisterPage", typeof(RegisterPage));
+        Routing.RegisterRoute("RecipesPage", typeof(RecipesPage));
+        //Routing.RegisterRoute("IngredientsPage", typeof(IngredientsPage));
 
-		MainPage = new AppShell();
-	}
+        MainPage = new AppShell();
+
+
+    }
+
+    public void RegisterRoutes()
+    {
+
+    }
 }

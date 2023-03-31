@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourKitchenApp.Views.RegisterPage"
+             Title="RegisterPage">
+    <Grid BackgroundColor="{StaticResource BackgroundColor}"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand"
+          >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackLayout
+            Grid.Row="0"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                Spacing="4"
+                Padding="40,30,20,30"
+                Orientation="Vertical">
+                <Label
+                    FontSize="30"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Text = "Enter Your Details Below:"
+                    />
+            </StackLayout>
+        </StackLayout>
+
+
+        <StackLayout
+            Grid.Row="1"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+ 
+                Spacing="4"
+                Padding="0,0,0,30"
+                Orientation="Vertical">
+                <Label
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text = "Enter Email:"
+                    />
+
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal">
+                    <Entry
+                        WidthRequest="250"
+                        BackgroundColor="{StaticResource inputColor}"
+                        Placeholder="Email@example.com"
+                        >
+                    </Entry>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="2"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+ 
+                Spacing="4"
+                Padding="0,0,0,30"
+                Orientation="Vertical">
+                <Label
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text = "Enter Username:"
+                    />
+
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    >
+                    <Entry
+                        WidthRequest="250"
+                        BackgroundColor="{StaticResource Primary}"
+                        Placeholder="Username" >
+                    </Entry>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="3"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+ 
+                Spacing="4"
+                Padding="0,0,0,30"
+                Orientation="Vertical">
+                <Label
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text = "Enter Password:"
+                    />
+
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    >
+                    <Entry
+                        WidthRequest="250"
+                        BackgroundColor="{StaticResource inputColor}"
+                        Placeholder="**************" >
+                    </Entry>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+
+
+
+
+        <StackLayout
+            Grid.Row="4"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                Spacing="4"
+                Padding="0,50,0,30"
+                Orientation="Vertical">
+                <Button 
+                    VerticalOptions="Center"
+                    BackgroundColor="{StaticResource ButtonColor}"
+                    TextColor="white"
+                    HorizontalOptions="Center"
+                    Text="Submit"
+                    FontSize="20">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+
+
+    </Grid>
+</ContentPage>
