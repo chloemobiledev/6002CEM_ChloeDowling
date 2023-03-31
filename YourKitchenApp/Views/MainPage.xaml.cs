@@ -19,6 +19,11 @@ public partial class MainPage : ContentPage
     {
         await Shell.Current.GoToAsync("/RecipesPage");
     }
+    private async void ToIngredientsPage(System.Object sender, System.EventArgs e)
+
+    {
+        await Shell.Current.GoToAsync("/IngredientsPage");
+    }
 
     private async void ToRegisterPage(System.Object sender, System.EventArgs e)
 

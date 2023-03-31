@@ -68,6 +68,7 @@
                     BackgroundColor="{StaticResource ButtonColor}"
                     HorizontalOptions="Center"
                     Padding="20"
+                    Clicked="ToIngredientsPage"
                     
                ></Button>
             </StackLayout>

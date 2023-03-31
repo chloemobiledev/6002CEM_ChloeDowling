@@ -12,7 +12,7 @@ public partial class App : Application
         Routing.RegisterRoute("LoginPage", typeof(LoginPage));
         Routing.RegisterRoute("RegisterPage", typeof(RegisterPage));
         Routing.RegisterRoute("RecipesPage", typeof(RecipesPage));
-        //Routing.RegisterRoute("IngredientsPage", typeof(IngredientsPage));
+        Routing.RegisterRoute("IngredientsPage", typeof(IngredientsPage));
 
         MainPage = new AppShell();
 
