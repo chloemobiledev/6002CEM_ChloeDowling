@@ -28,38 +28,38 @@ public partial class IngredientPageViewModel : ObservableObject
             Ingredients = new()
             {
                 new Ingredient (
-                            IngName: "Eggs",
-                            StoragePlace: "Cupboard",
-                            ExpiryDate: DateTime.Today),
+                    IngName: "Eggs",
+                    StoragePlace: "Cupboard",
+                    ExpiryDate: DateTime.UtcNow.AddDays(10)),
                 new Ingredient (
-                            IngName: "Milk",
-                            StoragePlace: "Fridge",
-                            ExpiryDate: DateTime.Today),
+                    IngName: "Milk",
+                    StoragePlace: "Fridge",
+                    ExpiryDate: DateTime.UtcNow.AddDays(5)),
                 new Ingredient (
-                            IngName: "Red Peppers",
-                            StoragePlace: "Fridge",
-                            ExpiryDate: DateTime.Today),
+                    IngName: "Red Peppers",
+                    StoragePlace: "Fridge",
+                    ExpiryDate: DateTime.UtcNow.AddDays(4)),
                 new Ingredient (
-                            IngName: "Onions",
-                            StoragePlace: "Cupboard",
-                            ExpiryDate: DateTime.Today),
+                    IngName: "Onions",
+                    StoragePlace: "Cupboard",
+                    ExpiryDate: DateTime.UtcNow.AddDays(7)),
                 new Ingredient (
-                            IngName: "Cheese",
-                            StoragePlace: "Fridge",
-                            ExpiryDate: DateTime.Today),
+                    IngName: "Cheese",
+                    StoragePlace: "Fridge",
+                    ExpiryDate: DateTime.UtcNow.AddDays(14)),
                 new Ingredient (
-                            IngName: "Soft Cheese",
-                            StoragePlace: "Cupboard",
-                            ExpiryDate: DateTime.Today),
+                    IngName: "Soft Cheese",
+                    StoragePlace: "Cupboard",
+                    ExpiryDate: DateTime.UtcNow.AddDays(6)),
                 new Ingredient (
-                            IngName: "Green Beans",
-                            StoragePlace: "Fridge",
-                            ExpiryDate: DateTime.Today),
+                    IngName: "Green Beans",
+                    StoragePlace: "Fridge",
+                    ExpiryDate: DateTime.UtcNow.AddDays(5)),
                 new Ingredient (
-                            IngName: "Chicken",
-                            StoragePlace: "Fridge",
-                           ExpiryDate: DateTime.Today)
-                 };
+                    IngName: "Chicken",
+                    StoragePlace: "Fridge",
+                    ExpiryDate: DateTime.UtcNow.AddDays(5))
+                     };
 
         }
 
