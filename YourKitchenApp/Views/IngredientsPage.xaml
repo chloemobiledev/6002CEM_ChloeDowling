@@ -42,6 +42,7 @@
                             Stroke="#efefef">
                         <Grid>
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="AUTO"/>
                             </Grid.ColumnDefinitions>
@@ -49,13 +50,21 @@
                             <Label Text="{Binding IngName}" 
                                    FontSize="20"
                                    FontFamily="FallingSky"
-                                   Padding="0,0,0,0"/>
+                                   Padding="0,0,0,0"
+                                   Grid.Column="0"/>
+                            
                             
                             <Label Text="{Binding ExpiryDate}" 
-                                   Grid.Column="2"
+                                   Grid.Column="1"
                                    FontSize="16"
                                    FontFamily="FallingSky"
+                                   HorizontalOptions="Center"
                                    Padding="0,0,0,0"/>
+
+                            <Label Text="x"
+                                   Grid.Column="3"
+                                   FontAttributes="Bold"
+                                   Padding="5"/>
 
 
 
