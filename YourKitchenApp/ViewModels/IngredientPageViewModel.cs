@@ -1,34 +1,73 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using YourKitchenApp.Models;
-using YourKitchenApp.Services;
-using System.Collections.ObjectModel;
+using YourKitchenApp.Views;
 namespace YourKitchenApp.ViewModels;
 
-public class IngredientPageViewModel : BaseViewModel
+public partial class IngredientPageViewModel : ObservableObject
 {
-	ObservableCollection<Ingredient> _ingredients;
+    [ObservableProperty]
+    List<Ingredient> ingredients;
 
-	public IngredientPageViewModel()
-	{
-		LoadData();
-	}
+    [ObservableProperty]
+    bool isRefreshing;
 
-	public ObservableCollection<Ingredient> Ingredients
-	{
-		get { return _ingredients; }
-		set
-		{
-			_ingredients = value;
-			OnPropertyChanged();
-		}
-	}
+    public IngredientPageViewModel()
+    {
+        LoadIngredientsAsync();
+    }
 
-	private void LoadData()
-	{
-		Ingredients = new ObservableCollection<Ingredient>();
 
-		Ingredients.Add(new Ingredient());
 
-		foreach (var ingredient in IngredientService.Instance.GetIngredients())
-            Ingredients.Add(ingredient);
-	}
+    [RelayCommand]
+    public async Task LoadIngredientsAsync()
+    {
+        try
+        {
+            await Task.Delay(1000);
+            Ingredients = new()
+            {
+                new Ingredient (
+                            IngName: "Eggs",
+                            StoragePlace: "Cupboard",
+                            ExpiryDate: DateTime.Today),
+                new Ingredient (
+                            IngName: "Milk",
+                            StoragePlace: "Fridge",
+                            ExpiryDate: DateTime.Today),
+                new Ingredient (
+                            IngName: "Red Peppers",
+                            StoragePlace: "Fridge",
+                            ExpiryDate: DateTime.Today),
+                new Ingredient (
+                            IngName: "Onions",
+                            StoragePlace: "Cupboard",
+                            ExpiryDate: DateTime.Today),
+                new Ingredient (
+                            IngName: "Cheese",
+                            StoragePlace: "Fridge",
+                            ExpiryDate: DateTime.Today),
+                new Ingredient (
+                            IngName: "Soft Cheese",
+                            StoragePlace: "Cupboard",
+                            ExpiryDate: DateTime.Today),
+                new Ingredient (
+                            IngName: "Green Beans",
+                            StoragePlace: "Fridge",
+                            ExpiryDate: DateTime.Today),
+                new Ingredient (
+                            IngName: "Chicken",
+                            StoragePlace: "Fridge",
+                           ExpiryDate: DateTime.Today)
+                 };
+
+        }
+
+        finally
+        {
+            IsRefreshing = false;
+        }
+
+
+    }
 }

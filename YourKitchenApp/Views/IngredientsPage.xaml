@@ -5,35 +5,22 @@
              xmlns:models ="clr-namespace:YourKitchenApp.Models"
              x:DataType="viewmodels:IngredientPageViewModel"
              x:Class="YourKitchenApp.Views.IngredientsPage">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="TitleTextStyle" TargetType="Label">
-                <Setter Property="FontFamily" Value="FallingSky"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
-            </Style>
-            
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    <Grid BackgroundColor="{StaticResource BackgroundColor}">
-        <!--Header-->
-        <Grid
-             ColumnDefinitions="Auto, *" >
-            <Label 
-                Grid.ColumnSpan="2"
-                Text ="Search Ingredient"
-                Style="{StaticResource TitleTextStyle}"/>
-            
 
 
-        </Grid>
-        <!--Search-->
-        <!--Ingredient List-->
-       
+
+    <ListView ItemsSource="{Binding Ingredients}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding IngName}"
+                          Detail="{Binding StoragePlace}">
+                    
+                </TextCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
         
-    </Grid>
+        
+    </ListView>
 
-    
+
+
 </ContentPage>

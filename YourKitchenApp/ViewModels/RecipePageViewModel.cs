@@ -67,7 +67,7 @@ public partial class RecipePageViewModel : ObservableObject
                             Summary: "Pull apart a ready-roasted chicken to whip up this healthy, vibrant, low-calorie dish in just 20 minutes",
                             Created: DateTime.Now,
                             RecipeImage: new Uri("https://images.immediate.co.uk/production/volatile/sites/30/2020/08/asian-pulled-chicken-salad-dbaebf8.jpg?quality=90&webp=true&resize=440,400"),
-                            KeyWords: new List<string> {"Salad", "Chicken"}),
+                            KeyWords: new List<string> {"Salad", "Chicken"})
 
                  };
 

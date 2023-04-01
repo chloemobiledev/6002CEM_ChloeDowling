@@ -1,10 +1,14 @@
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
 namespace YourKitchenApp.Models;
 
-public class IngredientModel : ContentPage
-{
+
     public record Ingredient(
         string IngName,
         string StoragePlace,
         DateTime ExpiryDate
         );
-}
+
+
+
