@@ -1,5 +1,8 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Intents;
+using System.Collections.ObjectModel;
+using System.Security.Cryptography.X509Certificates;
 using YourKitchenApp.Models;
 using YourKitchenApp.Views;
 namespace YourKitchenApp.ViewModels;
@@ -9,6 +12,8 @@ public partial class IngredientPageViewModel : ObservableObject
     [ObservableProperty]
     List<Ingredient> ingredients;
 
+
+
     [ObservableProperty]
     bool isRefreshing;
 
@@ -16,7 +21,6 @@ public partial class IngredientPageViewModel : ObservableObject
     {
         LoadIngredientsAsync();
     }
-
 
 
     [RelayCommand]
@@ -67,6 +71,7 @@ public partial class IngredientPageViewModel : ObservableObject
         {
             IsRefreshing = false;
         }
+
 
 
     }

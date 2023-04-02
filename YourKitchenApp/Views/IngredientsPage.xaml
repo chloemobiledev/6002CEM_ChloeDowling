@@ -8,29 +8,38 @@
 
 
 
-    <Grid Padding="16">
+    <Grid Padding="16"
+          BackgroundColor="{StaticResource BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="AUTO"/>
             <RowDefinition Height="AUTO"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="AUTO"/>
             <RowDefinition Height="AUTO"/>
         </Grid.RowDefinitions>
 
-        <HorizontalStackLayout>
+        <VerticalStackLayout>
             <Label FontFamily="FallingSky" FontSize="24" Text="Your Ingredients"/>
-        </HorizontalStackLayout>
-
-        <Label 
+            <Label 
             Grid.Row="1"
             Text="List of ingredients in your [storage place here]"
             Padding="10,10,10,10"/>
-        <Button Grid.Row="3"
+        </VerticalStackLayout>
+
+        <Entry Grid.Row="2"
+               Placeholder="Search my kitchen"
+               TextChanged="Entry_TextChanged"
+               ></Entry>
+
+        
+        <Button Grid.Row="4"
                 Text="Add Item"
                 CornerRadius="5"
                 Padding="16"/>
 
         <CollectionView ItemsSource="{Binding Ingredients}"
-                        Grid.Row="2">
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        Grid.Row="3"
+                        x:Name="IngredientsCollectionView">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
                                    ItemSpacing="20"/>
@@ -39,8 +48,8 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Ingredient">
                     <Border MinimumHeightRequest="20"
-                            Stroke="#efefef">
-                        <Grid>
+                            Stroke="{StaticResource BackgroundColor}">
+                        <Grid BackgroundColor="{StaticResource BackgroundColor}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
