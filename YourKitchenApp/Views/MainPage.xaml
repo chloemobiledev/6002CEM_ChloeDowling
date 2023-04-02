@@ -82,41 +82,19 @@
                 Spacing="4"
                 Padding="10,0,0,30"
                 Orientation="Vertical">
-                <Button 
-                    x:Name="Login"
-                    FontSize="20"
-                    FontAutoScalingEnabled="True"
-                    Text="Login"
-                    BackgroundColor="{StaticResource ButtonColor}"
-                    HorizontalOptions="Center"
+                <Button Grid.Row="4"
+                    Text="Logout"
                     Padding="10"
-                    Clicked="NavigateToLoginPage"
-                    
-               ></Button>
-
-            </StackLayout>
-        </StackLayout>
-
-        <StackLayout
-            Grid.Row="4"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
-            <StackLayout
-                Spacing="4"
-                Padding="0,0,0,0"
-                Orientation="Vertical">
-                <Button 
-                    x:Name="Register"
-                    FontSize="12"
-                    Text="Don't Have An Account Yet? Register Here"
-                    BackgroundColor="Transparent"
-                    HorizontalOptions="Center"
-                    BorderColor="Transparent"
+                    Margin="20,0,20,20"
+                    BackgroundColor="{StaticResource ButtonColor}"
                     TextColor="Black"
-                    Padding="0,10,0,0"
-                    Clicked="ToRegisterPage"
+                    CornerRadius="30"
+                    FontAttributes="Bold"
                     
-               ></Button>
+                    Clicked="BackToLogin"/>
+                    
+               
+
             </StackLayout>
         </StackLayout>
 

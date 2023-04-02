@@ -2,18 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YourKitchenApp.Views.LoginPage"
-             Title="LoginPage">
+             Title="LoginPage"
+             Shell.NavBarIsVisible="False">
 
 
     <Grid BackgroundColor="{StaticResource BackgroundColor}"
           VerticalOptions="FillAndExpand"
-          HorizontalOptions="FillAndExpand"
-          >
+          HorizontalOptions="FillAndExpand">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"></RowDefinition>
-            <RowDefinition Height="0.2*"></RowDefinition>
-            <RowDefinition Height="0.2*"></RowDefinition>
-            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
         </Grid.RowDefinitions>
 
         <StackLayout
@@ -25,45 +28,37 @@
                 Padding="40,30,20,30"
                 Orientation="Vertical">
                 <Label
-                    FontSize="30"
+                    FontSize="40"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    Text = "Log In to Your Kitchen"
+                    Text = "Welcome!"
+                    FontFamily="FallingSky"
                     />
             </StackLayout>
         </StackLayout>
-
-
+        
         <StackLayout
             Grid.Row="1"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
             <StackLayout
- 
                 Spacing="4"
-                Padding="0,0,0,30"
+                Padding="40,30,20,30"
                 Orientation="Vertical">
                 <Label
-                    FontSize="Medium"
-                    HorizontalOptions="Center"
-                    Text = "Enter username:"
+                    FontSize="20"
+                    FontAttributes="Italic"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Text = "Please sign in to your kitchen"
+                    FontFamily="FallingSky"
                     />
-
-                <StackLayout
-                    HorizontalOptions="Center"
-                    Orientation="Horizontal">
-                    <Entry
-                        WidthRequest="200"
-                        BackgroundColor="{StaticResource inputColor}"
-                        Placeholder="Username" >
-                    </Entry>
-
-                </StackLayout>
             </StackLayout>
         </StackLayout>
 
+
         <StackLayout
-            Grid.Row="2"
+            Grid.Row="3"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
@@ -72,20 +67,19 @@
                 Spacing="4"
                 Padding="0,0,0,30"
                 Orientation="Vertical">
-                <Label
-                    FontSize="Medium"
-                    HorizontalOptions="Center"
-                    Text = "Enter Password:"
-                    />
+
 
                 <StackLayout
                     HorizontalOptions="Center"
                     Orientation="Horizontal"
                     >
                     <Entry
-                        WidthRequest="200"
-                        Placeholder="***********" 
-                        BackgroundColor="{StaticResource inputColor}"
+                        WidthRequest="250"
+                        FontSize="20"
+                        PlaceholderColor="Gray"
+                        FontFamily="FallingSky"
+                        Placeholder="Username" 
+                        Text="{Binding MyLoginRequestModel.UserName}"
                         >
                     </Entry>
 
@@ -93,37 +87,58 @@
             </StackLayout>
         </StackLayout>
 
-
-
-
         <StackLayout
-            Grid.Row="3"
+            Grid.Row="4"
+            BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
             <StackLayout
+ 
                 Spacing="4"
-                Padding="0,50,0,30"
+                Padding="0,0,0,30"
                 Orientation="Vertical">
-                <Button 
-                    VerticalOptions="Center"
+                
+
+                <StackLayout
                     HorizontalOptions="Center"
-                    BackgroundColor="{StaticResource ButtonColor}"
-                    Text="Log In"
-                    FontSize="20">
-                </Button>
-                <Button 
-                    VerticalOptions="Center"
-                    BackgroundColor="Transparent"
-                    TextColor="Black"
-                    HorizontalOptions="Center"
-                    Text="Register here"
-                    Clicked="NavigateToRegisterPage"
-                    BorderColor="Transparent"
-                    FontSize="20">
-                </Button>
+                    Orientation="Horizontal"
+                    >
+                    <Entry
+                        WidthRequest="250"
+                        FontSize="20"
+                        PlaceholderColor="gray"
+                        Placeholder="***************"
+                        FontFamily="FallingSky"
+                        Text="{Binding MyLoginRequestModel.Password}"
+                        >
+                    </Entry>
+
+                </StackLayout>
             </StackLayout>
+
+            <Button Grid.Row="4"
+                    Text="Sign in"
+                    Padding="10"
+                    Margin="20,0,20,20"
+                    BackgroundColor="{StaticResource ButtonColor}"
+                    TextColor="Black"
+                    CornerRadius="30"
+                    FontAttributes="Bold"
+                    
+                    Command="{Binding LoginCommand}"/>
+
+            <Grid Grid.Row="5" VerticalOptions="Center">
+                <Button Text="Don't have an account? Register here" TextColor="gray" FontSize="Small" BackgroundColor="Transparent" Clicked="NavigateToRegisterPage" />
+            </Grid>
+            
+            
         </StackLayout>
 
 
+
+
+
     </Grid>
+
+
 </ContentPage>

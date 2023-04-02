@@ -1,15 +1,12 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+
 namespace YourKitchenApp.ViewModels;
 
-public class BaseViewModel : ContentPage
+public partial class BaseViewModel : ObservableObject
 {
-	public BaseViewModel()
-	{
-		Content = new VerticalStackLayout
-		{
-			Children = {
-				new Label { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Text = "Welcome to .NET MAUI!"
-				}
-			}
-		};
-	}
+	[ObservableProperty]
+	public bool _isBusy;
+
+	[ObservableProperty]
+	public string _title; 
 }
