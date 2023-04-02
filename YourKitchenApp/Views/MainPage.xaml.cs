@@ -1,14 +1,19 @@
-﻿namespace YourKitchenApp;
+﻿using YourKitchenApp.ViewModels;
 
-public partial class MainPage : ContentPage
+namespace YourKitchenApp;
+
+public partial class MainPage
 {
     public MainPage()
     {
         InitializeComponent();
+        BindingContext = new MainPageViewModel();
     }
 
 
-    private async void NavigateToLoginPage(System.Object sender, System.EventArgs e)
+    
+
+    private async void BackToLogin(System.Object sender, System.EventArgs e)
 
     {
         await Shell.Current.GoToAsync("/LoginPage");
@@ -23,12 +28,6 @@ public partial class MainPage : ContentPage
 
     {
         await Shell.Current.GoToAsync("/IngredientsPage");
-    }
-
-    private async void ToRegisterPage(System.Object sender, System.EventArgs e)
-
-    {
-        await Shell.Current.GoToAsync("/RegisterPage");
     }
 
     private async void ToRecipesPage(System.Object sender, System.EventArgs e)
