@@ -14,15 +14,24 @@
             <Style x:Key="SearchBarContainerStyle" TargetType="Frame">
                 <Setter Property="HasShadow" Value="False"/>
                 <Setter Property="CornerRadius" Value="14"/>
-                <Setter Property="HeightRequest" Value="10"/>
                 <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="Padding" Value="0,0,0,0"/>
             </Style>
+
+            <Style x:Key="SearchBarStyle" TargetType="SearchBar">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="PlaceholderColor" Value="Black"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
+            </Style>
+            
 
             <Style x:Key="GoBtnContainerStyle" TargetType="Frame">
                 <Setter Property="HasShadow" Value="False"/>
                 <Setter Property="CornerRadius" Value="30"/>
-                <Setter Property="HeightRequest" Value="50"/>
-                <Setter Property="WidthRequest" Value="50"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="40"/>
                 <Setter Property="Padding" Value="0"/>
                 <Setter Property="BorderColor" Value="Black"/>
             </Style>
@@ -51,12 +60,14 @@
         <Grid 
               Grid.Row="1"
               ColumnDefinitions="270, 30, Auto"
-              BackgroundColor="Yellow"
+              RowDefinitions="30"
+              Padding="10"
               >
             <Frame Style="{StaticResource SearchBarContainerStyle}">
                 <SearchBar 
+                    Style="{StaticResource SearchBarStyle}"
                     Placeholder="Search ingredient"
-                    PlaceholderColor="LightGrey"/>
+                    />
             </Frame>
 
             <Frame Grid.Column="2"
@@ -64,8 +75,9 @@
                    >
                 <Button
                     Grid.Column="1"
-                    Text="Go"
-                    FontSize="16">
+                    Text="ok"
+                    FontSize="14"
+                    Padding="0">
                 </Button>
             </Frame>
 
