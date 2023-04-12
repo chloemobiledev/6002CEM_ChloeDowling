@@ -4,33 +4,91 @@
              xmlns:viewmodels ="clr-namespace:YourKitchenApp.ViewModels"
              xmlns:models ="clr-namespace:YourKitchenApp.Models"
              x:DataType="viewmodels:IngredientPageViewModel"
-             x:Class="YourKitchenApp.Views.IngredientsPage">
+             x:Class="YourKitchenApp.Views.IngredientsPage"
+             Shell.FlyoutBehavior="Flyout"
+             Shell.NavBarIsVisible="True"
+             FlyoutItem.IsVisible="True">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="SearchBarContainerStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="CornerRadius" Value="14"/>
+                <Setter Property="HeightRequest" Value="10"/>
+                <Setter Property="HasShadow" Value="False"/>
+            </Style>
+
+            <Style x:Key="GoBtnContainerStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="50"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BorderColor" Value="Black"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
 
 
-    <Grid Padding="16">
+    <Grid Padding="16"
+          BackgroundColor="{StaticResource BackgroundColor}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
             <RowDefinition Height="AUTO"/>
             <RowDefinition Height="AUTO"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="AUTO"/>
         </Grid.RowDefinitions>
 
-        <HorizontalStackLayout>
+        <Grid Grid.Row="0"
+              BackgroundColor="blue">
             <Label FontFamily="FallingSky" FontSize="24" Text="Your Ingredients"/>
-        </HorizontalStackLayout>
+        </Grid>
+
+        <!--SEARCH BAR-->
+        <Grid 
+              Grid.Row="1"
+              ColumnDefinitions="270, 30, Auto"
+              BackgroundColor="Yellow"
+              >
+            <Frame Style="{StaticResource SearchBarContainerStyle}">
+                <SearchBar 
+                    Placeholder="Search ingredient"
+                    PlaceholderColor="LightGrey"/>
+            </Frame>
+
+            <Frame Grid.Column="2"
+                   Style="{StaticResource GoBtnContainerStyle}"
+                   >
+                <Button
+                    Grid.Column="1"
+                    Text="Go"
+                    FontSize="16">
+                </Button>
+            </Frame>
+
+                
+           
+       
+            
+  
+        </Grid>
 
         <Label 
-            Grid.Row="1"
+            Grid.Row="2"
             Text="List of ingredients in your [storage place here]"
             Padding="10,10,10,10"/>
-        <Button Grid.Row="3"
+        
+        <Button Grid.Row="4"
                 Text="Add Item"
                 CornerRadius="5"
                 Padding="16"/>
 
         <CollectionView ItemsSource="{Binding Ingredients}"
-                        Grid.Row="2">
+                        Grid.Row="3"
+                        >
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
                                    ItemSpacing="20"/>
@@ -40,7 +98,8 @@
                 <DataTemplate x:DataType="models:Ingredient">
                     <Border MinimumHeightRequest="20"
                             Stroke="#efefef">
-                        <Grid>
+                        <Grid 
+                            BackgroundColor="{StaticResource BackgroundColor}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>

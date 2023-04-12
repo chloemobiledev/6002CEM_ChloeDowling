@@ -5,7 +5,10 @@
              xmlns:viewmodels ="clr-namespace:YourKitchenApp.ViewModels"
              xmlns:models ="clr-namespace:YourKitchenApp.Models"
              x:DataType="viewmodels:RecipePageViewModel"
-             x:Class="YourKitchenApp.Views.RecipesPage">
+             x:Class="YourKitchenApp.Views.RecipesPage"
+             Shell.FlyoutBehavior="Flyout"
+             Shell.NavBarIsVisible="True"
+             FlyoutItem.IsVisible="True">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="AUTO"/>
