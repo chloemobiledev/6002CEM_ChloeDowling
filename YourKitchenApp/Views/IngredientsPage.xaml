@@ -9,6 +9,7 @@
              Shell.NavBarIsVisible="True"
              FlyoutItem.IsVisible="True">
 
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="SearchBarContainerStyle" TargetType="Frame">
