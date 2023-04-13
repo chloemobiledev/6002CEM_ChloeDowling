@@ -23,8 +23,7 @@
             <RowDefinition Height="AUTO"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0"
-              BackgroundColor="blue">
+        <Grid Grid.Row="0">
             <Label FontFamily="FallingSky" FontSize="24" Text="Your Ingredients"/>
         </Grid>
 
@@ -38,7 +37,7 @@
             <Frame Style="{StaticResource SearchBarContainerStyle}">
                 <SearchBar 
                     Style="{StaticResource SearchBarStyle}"
-                    Placeholder="Search ingredient"
+                    Placeholder="Search item"
                     />
             </Frame>
 
@@ -58,8 +57,10 @@
 
         <Label 
             Grid.Row="2"
-            Text="List of ingredients in your [storage place here]"
-            Padding="10,10,10,10"/>
+            Text="What's in your kitchen:"
+            Padding="0,10,10,10"
+            FontFamily="FallingSky"
+            FontSize="18"/>
         
         <Button Grid.Row="4"
                 Text="Add Item"
