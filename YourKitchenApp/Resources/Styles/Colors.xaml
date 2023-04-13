@@ -4,9 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Color x:Key="ButtonColor">#66a266</Color>
+    <Color x:Key="ButtonColor">#80b280</Color>
     <Color x:Key="TitleColor">#197419</Color>
-    <Color x:Key="BackgroundColor">#99c199</Color>
+    <Color x:Key="BackgroundColor">#cce0cc</Color>
     <Color x:Key="inputColor">#80b280</Color>
     <Color x:Key="Primary">#197419</Color>
     <Color x:Key="Secondary">#DFD8F7</Color>

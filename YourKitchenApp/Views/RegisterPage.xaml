@@ -5,22 +5,22 @@
              Title="RegisterPage"
              Shell.FlyoutBehavior="Flyout"
              Shell.NavBarIsVisible="False">
-    
+
     <Grid BackgroundColor="{StaticResource BackgroundColor}"
           VerticalOptions="FillAndExpand"
-          HorizontalOptions="FillAndExpand"
-          >
+          HorizontalOptions="FillAndExpand">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition Height="0.2*"></RowDefinition>
-            <RowDefinition Height="0.2*"></RowDefinition>
-            <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
         </Grid.RowDefinitions>
 
         <StackLayout
             Grid.Row="0"
-            BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
             <StackLayout
@@ -28,74 +28,35 @@
                 Padding="40,30,20,30"
                 Orientation="Vertical">
                 <Label
-                    FontSize="30"
+                    FontSize="36"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
-                    Text = "Enter Your Details Below:"
+                    Text = "Create a new account"
+                    FontFamily="FallingSky"
                     />
             </StackLayout>
         </StackLayout>
-
 
         <StackLayout
             Grid.Row="1"
-            BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
             <StackLayout
- 
                 Spacing="4"
-                Padding="0,0,0,30"
+                Padding="40,30,20,30"
                 Orientation="Vertical">
                 <Label
                     FontSize="20"
-                    HorizontalOptions="Center"
-                    Text = "Enter Email:"
+                    Padding="0"
+                    FontAttributes="Italic"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Text = "Enter your details:"
+                    FontFamily="FallingSky"
                     />
-
-                <StackLayout
-                    HorizontalOptions="Center"
-                    Orientation="Horizontal">
-                    <Entry
-                        WidthRequest="250"
-                        BackgroundColor="{StaticResource inputColor}"
-                        Placeholder="Email@example.com"
-                        >
-                    </Entry>
-
-                </StackLayout>
             </StackLayout>
         </StackLayout>
 
-        <StackLayout
-            Grid.Row="2"
-            BackgroundColor="Transparent"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
-            <StackLayout
- 
-                Spacing="4"
-                Padding="0,0,0,30"
-                Orientation="Vertical">
-                <Label
-                    FontSize="20"
-                    HorizontalOptions="Center"
-                    Text = "Enter Username:"
-                    />
-
-                <StackLayout
-                    HorizontalOptions="Center"
-                    Orientation="Horizontal"
-                    >
-                    <Entry
-                        WidthRequest="250"
-                        BackgroundColor="{StaticResource Primary}"
-                        Placeholder="Username" >
-                    </Entry>
-
-                </StackLayout>
-            </StackLayout>
-        </StackLayout>
 
         <StackLayout
             Grid.Row="3"
@@ -107,49 +68,87 @@
                 Spacing="4"
                 Padding="0,0,0,30"
                 Orientation="Vertical">
-                <Label
-                    FontSize="20"
-                    HorizontalOptions="Center"
-                    Text = "Enter Password:"
-                    />
 
                 <StackLayout
                     HorizontalOptions="Center"
                     Orientation="Horizontal"
                     >
                     <Entry
-                        WidthRequest="250"
-                        BackgroundColor="{StaticResource inputColor}"
-                        Placeholder="**************" >
+                        Style="{StaticResource RegiserEntryStyle}"
+                        Placeholder="Firstname" 
+                        >
+                    </Entry>
+
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    >
+                    <Entry
+                        Style="{StaticResource RegiserEntryStyle}"
+                        Placeholder="Surname" 
+                        >
+                    </Entry>
+
+                    
+
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    >
+                    <Entry
+                        Style="{StaticResource RegiserEntryStyle}"
+                        Placeholder="Create username" 
+                        >
+                    </Entry>
+
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    >
+                    <Entry
+                        Style="{StaticResource RegiserEntryStyle}"
+                        Placeholder="Password"
+                        >
                     </Entry>
 
                 </StackLayout>
             </StackLayout>
         </StackLayout>
 
-
-
-
-
         <StackLayout
-            Grid.Row="4"
+            Grid.Row="5"
+            Padding="0,20,0,0"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand">
-            <StackLayout
-                Spacing="4"
-                Padding="0,50,0,30"
-                Orientation="Vertical">
-                <Button 
-                    VerticalOptions="Center"
+            
+
+            <Button Grid.Row="4"
+                    Text="Create Account"
+                    Padding="10"
+                    Margin="20,0,20,20"
                     BackgroundColor="{StaticResource ButtonColor}"
-                    TextColor="white"
-                    HorizontalOptions="Center"
-                    Text="Submit"
-                    FontSize="20">
-                </Button>
-            </StackLayout>
+                    TextColor="Black"
+                    CornerRadius="30"
+                    FontAttributes="Bold"
+                    Clicked="NavigateToMainPage"
+                    />
+
+            <Grid Grid.Row="5" VerticalOptions="Center">
+                <Button Text="Already have an account? Log in here" 
+                        TextColor="gray" FontSize="Small" 
+                        BackgroundColor="Transparent" 
+                        Clicked="NavigateToLoginPage" />
+            </Grid>
+
+
         </StackLayout>
+
+
+
 
 
     </Grid>
