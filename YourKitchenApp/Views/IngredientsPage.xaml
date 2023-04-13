@@ -9,36 +9,6 @@
              Shell.NavBarIsVisible="True"
              FlyoutItem.IsVisible="True">
 
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="SearchBarContainerStyle" TargetType="Frame">
-                <Setter Property="HasShadow" Value="False"/>
-                <Setter Property="CornerRadius" Value="14"/>
-                <Setter Property="HasShadow" Value="False"/>
-                <Setter Property="Padding" Value="0,0,0,0"/>
-            </Style>
-
-            <Style x:Key="SearchBarStyle" TargetType="SearchBar">
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="PlaceholderColor" Value="Black"/>
-                <Setter Property="Margin" Value="0,0,0,0"/>
-            </Style>
-            
-
-            <Style x:Key="GoBtnContainerStyle" TargetType="Frame">
-                <Setter Property="HasShadow" Value="False"/>
-                <Setter Property="CornerRadius" Value="30"/>
-                <Setter Property="HeightRequest" Value="40"/>
-                <Setter Property="WidthRequest" Value="40"/>
-                <Setter Property="Padding" Value="0"/>
-                <Setter Property="BorderColor" Value="Black"/>
-            </Style>
-
-        </ResourceDictionary>
-    </ContentPage.Resources>
 
 
 
@@ -49,6 +19,7 @@
             <RowDefinition Height="AUTO"/>
             <RowDefinition Height="AUTO"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="AUTO"/>
             <RowDefinition Height="AUTO"/>
         </Grid.RowDefinitions>
 
@@ -82,11 +53,7 @@
                 </Button>
             </Frame>
 
-                
-           
-       
             
-  
         </Grid>
 
         <Label 
@@ -97,46 +64,54 @@
         <Button Grid.Row="4"
                 Text="Add Item"
                 CornerRadius="5"
-                Padding="16"/>
+                Padding="16"
+                Margin="12"/>
 
+        <Button Grid.Row="5"
+                Margin="12"
+                Text="Check Dates"
+                CornerRadius="5"
+                Padding="16"
+                Clicked="CheckDatesEvent"/>
+
+        <!--List of ingredients-->
         <CollectionView ItemsSource="{Binding Ingredients}"
                         Grid.Row="3"
                         >
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
-                                   ItemSpacing="20"/>
+                                   ItemSpacing="20"
+                                   />
             </CollectionView.ItemsLayout>
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Ingredient">
                     <Border MinimumHeightRequest="20"
-                            Stroke="#efefef">
+                            Stroke="gray"
+                            >
                         <Grid 
-                            BackgroundColor="{StaticResource BackgroundColor}">
+                            BackgroundColor="{StaticResource BackgroundColor}"
+                            >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="180"/>
                             </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding IngName}" 
+                            <Label Text="{Binding IngName}"
+                                   Style="{StaticResource ItemsLabelStyle}"
                                    FontSize="20"
-                                   FontFamily="FallingSky"
-                                   Padding="0,0,0,0"
                                    Grid.Column="0"/>
-                            
-                            
                             <Label Text="{Binding ExpiryDate}" 
+                                   Style="{StaticResource ItemsLabelStyle}"
                                    Grid.Column="1"
-                                   FontSize="16"
-                                   FontFamily="FallingSky"
-                                   HorizontalOptions="Center"
-                                   Padding="0,0,0,0"/>
+                                   FontSize="16"/>
 
-                            <Label Text="x"
-                                   Grid.Column="3"
-                                   FontAttributes="Bold"
-                                   Padding="5"/>
+                            <Button Grid.Column="3"
+                                    Style="{StaticResource RemoveButtonStyle}"
+                                    Text="x"
+                                    FontSize="16"/>
+
                         </Grid>
                     </Border>
 
