@@ -9,4 +9,11 @@ public partial class IngredientsPage : ContentPage
 		InitializeComponent();
 		BindingContext = new IngredientPageViewModel();
 	}
+
+	
+    private void CheckDatesEvent(object sender, EventArgs e)
+    {
+		var viewModel = (IngredientPageViewModel)BindingContext;
+		viewModel.CheckExpiryDates();
+    }
 }
