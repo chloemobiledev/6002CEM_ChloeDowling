@@ -8,9 +8,10 @@ public partial class App : Application
     public App()
     {
         InitializeComponent();
-        Routing.RegisterRoute("MainPage", typeof(MainPage));
+        
         Routing.RegisterRoute("LoginPage", typeof(LoginPage));
         Routing.RegisterRoute("RegisterPage", typeof(RegisterPage));
+        Routing.RegisterRoute("MainPage", typeof(MainPage));
         Routing.RegisterRoute("RecipesPage", typeof(RecipesPage));
         Routing.RegisterRoute("IngredientsPage", typeof(IngredientsPage));
 

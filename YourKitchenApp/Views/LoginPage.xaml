@@ -108,7 +108,8 @@
                         WidthRequest="250"
                         FontSize="20"
                         PlaceholderColor="gray"
-                        Placeholder="***************"
+                        Placeholder="Password"
+                        IsPassword="True"
                         FontFamily="FallingSky"
                         Text="{Binding MyLoginRequestModel.Password}"
                         >
