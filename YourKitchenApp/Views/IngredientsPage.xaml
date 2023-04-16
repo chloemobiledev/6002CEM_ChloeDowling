@@ -11,14 +11,11 @@
              FlyoutItem.IsVisible="True">
     
     
-            <ContentPage.Resources>
-                <local:DateTimeToStringConverter x:Key="DateTimeToStringConverter" />
-            </ContentPage.Resources>
-    
-    
-
-
-
+      
+        <ContentPage.Resources>
+          <local:DateTimeToStringConverter x:Key="DateTimeToStringConverter" />
+        </ContentPage.Resources>
+   
 
 <Grid Padding="16"
           BackgroundColor="{StaticResource BackgroundColor}">
@@ -66,22 +63,15 @@
         <Label 
             Grid.Row="2"
             Text="What's in your kitchen:"
-            Padding="0,10,10,10"
-            FontFamily="FallingSky"
-            FontSize="18"/>
-        
+            Style="{StaticResource TitleLabelStyle}" />
+
         <Button Grid.Row="4"
                 Text="Add Item"
-                CornerRadius="5"
-                Padding="16"
-                Margin="12"/>
+                Style="{StaticResource ButtonsStyle}"/>
 
         <Button Grid.Row="5"
-                Margin="12"
-                Text="Check Dates"
-                CornerRadius="5"
-                Padding="16"
-                Clicked="CheckDatesEvent"/>
+                Clicked="CheckDatesEvent"
+                Style="{StaticResource ButtonsStyle}"/>
 
         <!--List of ingredients-->
         <CollectionView ItemsSource="{Binding Ingredients}"
