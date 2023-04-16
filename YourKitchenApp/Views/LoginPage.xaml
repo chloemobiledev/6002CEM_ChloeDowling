@@ -6,6 +6,41 @@
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="False">
 
+    <ContentPage.Resources>
+        <Style x:Key="EntryStyle" TargetType="Entry">
+            <Setter Property="WidthRequest" Value="250"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="PlaceholderColor" Value="Gray"/>
+            <Setter Property="FontFamily" Value="FallingSky"/>
+        </Style>
+        <Style x:Key="LoginButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="0,0,20,20"/>
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="CornerRadius" Value="30"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="loginLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontAttributes" Value="Italic"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="FontFamily" Value="FallingSky"/>
+        </Style>
+
+        <Style x:Key="welcomeStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="FontFamily" Value="FallingSky"/>
+        </Style>
+        <Style x:Key="stackContainerStyle" TargetType="StackLayout">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+
 
     <Grid BackgroundColor="{StaticResource BackgroundColor}"
           VerticalOptions="FillAndExpand"
@@ -29,30 +64,22 @@
                 Padding="40,30,20,30"
                 Orientation="Vertical">
                 <Label
-                    FontSize="40"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand"
+                    Style="{StaticResource welcomeStyle}"
                     Text = "Welcome!"
-                    FontFamily="FallingSky"
                     />
             </StackLayout>
         </StackLayout>
         
         <StackLayout
             Grid.Row="1"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+            Style="{StaticResource stackContainerStyle}">
             <StackLayout
                 Spacing="4"
                 Padding="40,30,20,30"
                 Orientation="Vertical">
                 <Label
-                    FontSize="20"
-                    FontAttributes="Italic"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand"
                     Text = "Please sign in to your kitchen"
-                    FontFamily="FallingSky"
+                    Style="{StaticResource loginLabelStyle}"
                     />
             </StackLayout>
         </StackLayout>
@@ -61,24 +88,17 @@
         <StackLayout
             Grid.Row="3"
             BackgroundColor="Transparent"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+            Style="{StaticResource stackContainerStyle}">
             <StackLayout
- 
                 Spacing="4"
                 Padding="0,0,0,30"
                 Orientation="Vertical">
-
-
                 <StackLayout
                     HorizontalOptions="Center"
                     Orientation="Horizontal"
                     >
                     <Entry
-                        WidthRequest="250"
-                        FontSize="20"
-                        PlaceholderColor="Gray"
-                        FontFamily="FallingSky"
+                        Style="{StaticResource EntryStyle}"
                         Placeholder="Username" 
                         Text="{Binding MyLoginRequestModel.UserName}"
                         >
@@ -91,26 +111,19 @@
         <StackLayout
             Grid.Row="4"
             BackgroundColor="Transparent"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+            Style="{StaticResource stackContainerStyle}">
             <StackLayout
- 
                 Spacing="4"
                 Padding="0,0,0,30"
                 Orientation="Vertical">
-                
-
                 <StackLayout
                     HorizontalOptions="Center"
                     Orientation="Horizontal"
                     >
                     <Entry
-                        WidthRequest="250"
-                        FontSize="20"
-                        PlaceholderColor="gray"
+                        Style="{StaticResource EntryStyle}"
                         Placeholder="Password"
                         IsPassword="True"
-                        FontFamily="FallingSky"
                         Text="{Binding MyLoginRequestModel.Password}"
                         >
                     </Entry>
@@ -120,13 +133,7 @@
 
             <Button Grid.Row="4"
                     Text="Sign in"
-                    Padding="10"
-                    Margin="20,0,20,20"
-                    BackgroundColor="{StaticResource ButtonColor}"
-                    TextColor="Black"
-                    CornerRadius="30"
-                    FontAttributes="Bold"
-                    
+                    Style="{StaticResource LoginButtonStyle}"
                     Command="{Binding LoginCommand}"/>
 
             <Grid Grid.Row="5" VerticalOptions="Center">
