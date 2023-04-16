@@ -62,7 +62,23 @@ public partial class IngredientPageViewModel : ObservableObject
                 new Ingredient (
                     IngName: "Chicken",
                     StoragePlace: "Fridge",
-                    ExpiryDate: DateTime.UtcNow.AddDays(5))
+                    ExpiryDate: DateTime.UtcNow.AddDays(5)),
+                new Ingredient (
+                    IngName: "Grated Cheese",
+                    StoragePlace: "Fridge",
+                    ExpiryDate: DateTime.UtcNow.AddDays(7)),
+                new Ingredient (
+                    IngName: "Minced Beef",
+                    StoragePlace: "Fridge",
+                    ExpiryDate: DateTime.UtcNow.AddHours(5)),
+                new Ingredient (
+                    IngName: "Garlic Cloves",
+                    StoragePlace: "Cupboard",
+                    ExpiryDate: DateTime.UtcNow.AddDays(15)),
+                new Ingredient (
+                    IngName: "Bread",
+                    StoragePlace: "Cupboard",
+                    ExpiryDate: DateTime.UtcNow.AddDays(3))
                      };
 
         }

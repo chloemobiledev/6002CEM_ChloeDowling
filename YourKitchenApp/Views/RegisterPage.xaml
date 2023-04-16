@@ -6,9 +6,40 @@
              Shell.FlyoutBehavior="Flyout"
              Shell.NavBarIsVisible="False">
 
+    <ContentPage.Resources>
+        <Style x:Key="HeaderLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="FontFamily" Value="FallingSky"/>
+        </Style>
+
+        <Style x:Key="CreateBtnStyle" TargetType="Button">
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="20,0,20,20"/>
+            <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="CornerRadius" Value="30"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="stackStyle" TargetType="StackLayout">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        </Style>
+
+        <Style x:Key="createNewLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="36"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="FontFamily" Value="FallingSky"/>
+        </Style>
+
+    </ContentPage.Resources>
+
     <Grid BackgroundColor="{StaticResource BackgroundColor}"
-          VerticalOptions="FillAndExpand"
-          HorizontalOptions="FillAndExpand">
+          Style="{StaticResource stackStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="AUTO"></RowDefinition>
             <RowDefinition Height="AUTO"></RowDefinition>
@@ -21,39 +52,25 @@
 
         <StackLayout
             Grid.Row="0"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+            Style="{StaticResource stackStyle}">
             <StackLayout
                 Spacing="4"
                 Padding="40,30,20,30"
                 Orientation="Vertical">
-                <Label
-                    FontSize="36"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand"
-                    Text = "Create a new account"
-                    FontFamily="FallingSky"
-                    />
+                <Label Text = "Create a new account"/>
             </StackLayout>
         </StackLayout>
 
         <StackLayout
             Grid.Row="1"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+            Style="{StaticResource stackStyle}">
             <StackLayout
                 Spacing="4"
                 Padding="40,30,20,30"
                 Orientation="Vertical">
                 <Label
-                    FontSize="20"
-                    Padding="0"
-                    FontAttributes="Italic"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="CenterAndExpand"
-                    Text = "Enter your details:"
-                    FontFamily="FallingSky"
-                    />
+                    Style="{StaticResource HeaderLabelStyle}"
+                    Text = "Enter your details:"/>
             </StackLayout>
         </StackLayout>
 
@@ -61,8 +78,7 @@
         <StackLayout
             Grid.Row="3"
             BackgroundColor="Transparent"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+            Style="{StaticResource stackStyle}">
             <StackLayout
  
                 Spacing="4"
@@ -71,12 +87,10 @@
 
                 <StackLayout
                     HorizontalOptions="Center"
-                    Orientation="Horizontal"
-                    >
+                    Orientation="Horizontal">
                     <Entry
                         Style="{StaticResource RegiserEntryStyle}"
-                        Placeholder="Firstname" 
-                        >
+                        Placeholder="Firstname" >
                     </Entry>
 
                 </StackLayout>
@@ -110,6 +124,7 @@
                     >
                     <Entry
                         Style="{StaticResource RegiserEntryStyle}"
+                        IsPassword="True"
                         Placeholder="Password"
                         >
                     </Entry>
@@ -120,20 +135,14 @@
 
         <StackLayout
             Grid.Row="5"
-            Padding="0,20,0,0"
             BackgroundColor="Transparent"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand">
+            Style="{StaticResource stackStyle}"
+            Padding="0,20,0,0">
             
 
             <Button Grid.Row="4"
+                    Style="{StaticResource CreateBtnStyle}"
                     Text="Create Account"
-                    Padding="10"
-                    Margin="20,0,20,20"
-                    BackgroundColor="{StaticResource ButtonColor}"
-                    TextColor="Black"
-                    CornerRadius="30"
-                    FontAttributes="Bold"
                     Clicked="NavigateToMainPage"
                     />
 
@@ -143,7 +152,6 @@
                         BackgroundColor="Transparent" 
                         Clicked="NavigateToLoginPage" />
             </Grid>
-
 
         </StackLayout>
 

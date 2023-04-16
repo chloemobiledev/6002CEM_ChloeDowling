@@ -34,10 +34,6 @@
                      Margin="0,16"
                      IsRefreshing="{Binding IsRefreshing}"
                      Command="{Binding LoadRecipesCommand}">
-
-
-
-
             <CollectionView
             ItemsSource="{Binding Recipes}" 
             Grid.Row="2"
@@ -88,19 +84,12 @@
                                        FontSize="8"
                                        FontAttributes="Italic"
                                        Grid.Row="2"/>
-
-
                                 </Grid>
                             </Grid>
-
                         </Border>
-
                     </DataTemplate>
-
                 </CollectionView.ItemTemplate>
-
             </CollectionView>
-
         </RefreshView>
 
         <Button 
