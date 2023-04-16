@@ -4,15 +4,23 @@
              xmlns:viewmodels ="clr-namespace:YourKitchenApp.ViewModels"
              xmlns:models ="clr-namespace:YourKitchenApp.Models"
              x:DataType="viewmodels:IngredientPageViewModel"
+             xmlns:local ="clr-namespace:YourKitchenApp.Converters"
              x:Class="YourKitchenApp.Views.IngredientsPage"
              Shell.FlyoutBehavior="Flyout"
              Shell.NavBarIsVisible="True"
              FlyoutItem.IsVisible="True">
+    
+    
+            <ContentPage.Resources>
+                <local:DateTimeToStringConverter x:Key="DateTimeToStringConverter" />
+            </ContentPage.Resources>
+    
+    
 
 
 
 
-    <Grid Padding="16"
+<Grid Padding="16"
           BackgroundColor="{StaticResource BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="AUTO"/>
@@ -103,7 +111,7 @@
                                    Style="{StaticResource ItemsLabelStyle}"
                                    FontSize="20"
                                    Grid.Column="0"/>
-                            <Label Text="{Binding ExpiryDate}" 
+                        <Label Text="{Binding ExpiryDate, Converter={StaticResource DateTimeToStringConverter}}" 
                                    Style="{StaticResource ItemsLabelStyle}"
                                    Grid.Column="1"
                                    FontSize="16"/>

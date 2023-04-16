@@ -17,7 +17,7 @@ public partial class RegisterPage : ContentPage
     private async void NavigateToMainPage(System.Object sender, System.EventArgs e)
 
     {
-        await Shell.Current.GoToAsync("/MainPage");
+        await Shell.Current.GoToAsync("////MainPage");
     }
 
 }

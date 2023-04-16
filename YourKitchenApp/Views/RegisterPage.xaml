@@ -110,6 +110,7 @@
                     >
                     <Entry
                         Style="{StaticResource RegiserEntryStyle}"
+                        IsPassword="True"
                         Placeholder="Password"
                         >
                     </Entry>
