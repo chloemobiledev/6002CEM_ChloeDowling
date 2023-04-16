@@ -71,6 +71,7 @@
 
         <Button Grid.Row="5"
                 Clicked="CheckDatesEvent"
+                Text="Check expiry dates"
                 Style="{StaticResource ButtonsStyle}"/>
 
         <!--List of ingredients-->
